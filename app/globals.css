@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #05070b;
+  --bg-panel: #0b0f17;
+  --bg-panel-raised: #0f1520;
+  --border: #1c2635;
+  --border-soft: #141c29;
+  --text: #d7e0ea;
+  --text-dim: #6b7c93;
+  --text-faint: #445164;
+  --accent: #34d8b8;
+  --accent-dim: #1c8f79;
+  --danger: #f0576b;
+  --warn: #e0a83a;
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-panel: var(--bg-panel);
+  --color-panel-raised: var(--bg-panel-raised);
+  --color-border: var(--border);
+  --color-border-soft: var(--border-soft);
+  --color-ink: var(--text);
+  --color-ink-dim: var(--text-dim);
+  --color-ink-faint: var(--text-faint);
+  --color-accent: var(--accent);
+  --color-accent-dim: var(--accent-dim);
+  --color-danger: var(--danger);
+  --color-warn: var(--warn);
+  --font-mono: var(--font-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior: none;
+}
+
+/* Keep the html5-qrcode video from being letterboxed on tall phone screens. */
+#qr-reader {
+  border: none !important;
+  background: transparent !important;
+}
+#qr-reader video {
+  object-fit: cover;
+  border-radius: 0.75rem;
+}
+#qr-reader__scan_region,
+#qr-reader__dashboard,
+#qr-reader__dashboard_section {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+#qr-reader__status_span {
+  display: none !important;
+}
